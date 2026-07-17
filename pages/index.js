@@ -24,7 +24,7 @@ const Home = () => {
           </motion.h1>
           {/* subtitle */}
           <motion.p variants={fadeIn('down', 0.3)} initial="hidden" animate="show" exit='hidden'  className="max-w-xs sm:max-w-sm md:max-w-lg xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 text-lg sm:text-xl lg:text-2xl">
-          Создаю современные веб-приложения на React, Vue и Next.js. Опыт коммерческой разработки в RealWeb. Превращаю макеты в отзывчивые, быстрые и доступные интерфейсы.
+          Создаю современные веб-приложения на React, Vue и Nuxt.js. Опыт коммерческой разработки в RealWeb. Превращаю макеты в отзывчивые, быстрые и доступные интерфейсы.
           </motion.p>
           {/* btn */}
            <div className="flex justify-center xl:hidden relative">

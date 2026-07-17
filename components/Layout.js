@@ -6,6 +6,7 @@ import Nav from "../components/Nav";
 import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
 import DarkMode from "./DarkMode";
+import CustomCursor from "./CustomCursor";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -42,6 +43,8 @@ const Layout = ({ children }) => {
         lg:overflow-hidden
       `}
     >
+      <CustomCursor />
+
       <TopLeftImg />
 
       <Header />
