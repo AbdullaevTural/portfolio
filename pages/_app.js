@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <AnimatePresence mode="wait">
-        <motion.div key={router.route} className="h-full">
+        <motion.div key={router.route} className="xl:min-h-dvh relative pt-[96px] pb-[90px] xl:pt-0 xl:pb-0 ">
           <Transition/>
           <Component {...pageProps} />
         </motion.div>

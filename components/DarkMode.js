@@ -76,7 +76,7 @@ const DarkMode = () => {
     setIsOptionsOpen(!isOptionsOpen);
   };
   return (
-    <div className="flex bg-white/10 backdrop-blur-sm xl:rounded-full xl:w-max items-center xl:justify-center xl:h-16 gap-y-8 gap-x-6 z-50 bottom-0 left-0  px-5 xl:flex-row-reverse flex-col-reverse  justify-center py-5">
+    <div className="flex bg-white/10 backdrop-blur-sm xl:rounded-full xl:w-max items-center xl:justify-center xl:h-16 gap-y-6 gap-x-6 z-50 px-4 xl:px-5 flex-col justify-center py-3 xl:py-5 xl:flex-row-reverse">
       {options.map((item) => {
         return (
           theme === item.text && (
@@ -93,7 +93,7 @@ const DarkMode = () => {
         );
       })}
       {isOptionsOpen && (
-        <div className="flex gap-y-8 gap-x-6 flex-col-reverse xl:flex-row-reverse">
+        <div className="flex gap-6 flex-col xl:flex-row">
           {options.map((item) => {
             return (
               theme !== item.text && (

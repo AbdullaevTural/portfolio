@@ -14,20 +14,20 @@ import {motion} from "framer-motion";
 import {fadeIn} from "../variants";
 
 const Home = () => {
-  return (<div className="h-full">
+  return (<div className="h-dvh">
   {/* text */}
   <div className="w-full h-full ">
-    <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
+    <div className="text-center flex flex-col justify-center items-center xl:items-start xl:text-left h-full container mx-auto px-4">
         {/* title */}
-        <motion.h1 variants={fadeIn('down', 0.2)} initial="hidden" animate="show" exit='hidden' className="h1 xl:w-2/4 z-9 [text-shadow:_0_5px_0_rgb(0_0_0_/_40%)] text-4xl">
-        Меня зовут <span className="text-accent dark:text-accentDark ">Турал,</span>  <br />  я начинающий front-end разработчик.
+        <motion.h1 variants={fadeIn('down', 0.2)} initial="hidden" animate="show" exit='hidden' className="h1 xl:w-2/4 z-9 [text-shadow:_0_5px_0_rgb(0_0_0_/_40%)] text-3xl sm:text-4xl">
+        Привет, я <span className="text-accent dark:text-accentDark ">Турал</span> — <br /> Frontend-разработчик
           </motion.h1>
           {/* subtitle */}
-          <motion.p variants={fadeIn('down', 0.3)} initial="hidden" animate="show" exit='hidden'  className="sm:max-w-sm md:max-w-lg xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16  text-2xl max-lg:text-xl">
-          Я увлечен созданием веб-интерфейсов и стремлюсь к освоению новых технологий для того, чтобы делать пользовательский опыт более интересным и удобным.Готов изучать новые технологии и применять свои знания для создания визуально привлекательных и функциональных пользовательских интерфейсов.
+          <motion.p variants={fadeIn('down', 0.3)} initial="hidden" animate="show" exit='hidden'  className="max-w-xs sm:max-w-sm md:max-w-lg xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 text-lg sm:text-xl lg:text-2xl">
+          Создаю современные веб-приложения на React, Vue и Next.js. Опыт коммерческой разработки в RealWeb. Превращаю макеты в отзывчивые, быстрые и доступные интерфейсы.
           </motion.p>
           {/* btn */}
-           <div className="flex justify-center xl:hidden relative max-xs:hidden">
+           <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn/>
           </div>
           <motion.div variants={fadeIn('down', 0.4)} initial="hidden" animate="show" exit='hidden' className="hidden xl:flex">
@@ -36,14 +36,14 @@ const Home = () => {
     </div>
   </div>
   {/* image */}
-<div className="w-full h-full absolute right-0 bottom-0">
+<div className="w-full h-full absolute right-0 bottom-0 pointer-events-none">
   {/* bg image */}
   <div className=" bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0 "></div>
     {/* Particles */}
     <ParticlesContainer/>
       {/* avatar */}
       <motion.div variants={fadeIn('up', 0.5)} initial="hidden" animate="show" exit='hidden' transition={{duration:1, ease:'easeInOut'}}
-      className="w-full h-full max-w-[737px] max-h-[678px] absolute -bottom-32 lg:bottom-0 lg:right-[8%]">
+      className="w-full h-full max-w-[737px] max-h-[678px] absolute -bottom-32 lg:bottom-0 lg:right-[8%] hidden lg:block">
         <Avatar/>
       </motion.div>
 </div>

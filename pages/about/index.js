@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// icons
 import {
   FaHtml5,
   FaCss3,
@@ -9,29 +8,17 @@ import {
   FaFigma,
   FaSass,
   FaVuejs,
-  FaMailBulk,
+  FaGitAlt,
 } from "react-icons/fa";
 
 import {
   SiNextdotjs,
-  SiFramer,
-  SiAdobexd,
-  SiAdobephotoshop,
   SiTailwindcss,
 } from "react-icons/si";
 
-import { PiFileSql } from "react-icons/pi";
-import { BsTwitterX, BsTelephoneInbound } from "react-icons/bs";
-
-//companents
-import Avatar from "../../components/Avatar";
-import Avatars from "../../components/Avatar_about";
 import Circles from "../../components/Circles";
-//framer motion
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
-
-
 
 //  data
 const aboutData = [
@@ -39,61 +26,18 @@ const aboutData = [
     title: "Навыки",
     info: [
       {
-        title: "Веб Разработчик",
-        info: [
-          {
-            icon: <FaHtml5 />,
-            name: "HTML",
-          },
-          {
-            icon: <FaCss3 />,
-            name: "CSS",
-          },
-          {
-            icon: <FaJs />,
-            name: "JS",
-          },
-          {
-            icon: <FaReact />,
-            name: "REACT",
-          },
-          {
-            icon: <SiNextdotjs />,
-            name: "NEXT.JS",
-          },
-          {
-            icon: <FaSass />,
-            name: "SASS",
-          },
-          {
-            icon: <SiTailwindcss />,
-            name: "Tailwindcss",
-          },
-          {
-            icon: <FaVuejs />,
-            name: "VUE",
-          },
-          {
-            icon: <PiFileSql />,
-            name: "SQL",
-          },
-        ],
-      },
-      {
-        title: "UI/UX Дизайн",
-        info: [
-          {
-            icon: <FaFigma />,
-            name: "FIGMA",
-          },
-          {
-            icon: <SiAdobephotoshop />,
-            name: "Photoshop",
-          },
-          {
-            icon: <BsTwitterX />,
-            name: "Axure",
-          },
+        title: "Frontend",
+        icons: [
+          { icon: <FaHtml5 />, name: "HTML5" },
+          { icon: <FaCss3 />, name: "CSS3" },
+          { icon: <FaJs />, name: "JavaScript" },
+          { icon: <FaReact />, name: "React" },
+          { icon: <FaVuejs />, name: "Vue.js" },
+          { icon: <SiNextdotjs />, name: "Next.js" },
+          { icon: <SiTailwindcss />, name: "Tailwind" },
+          { icon: <FaSass />, name: "Sass" },
+          { icon: <FaGitAlt />, name: "Git" },
+          { icon: <FaFigma />, name: "Figma" },
         ],
       },
     ],
@@ -102,17 +46,20 @@ const aboutData = [
     title: "Обучение",
     info: [
       {
-        title:
-          "Санкт-Петербургский государственный университет телекоммуникаций им. проф. М.А.Бонч-Бруевича",
+        title: "СПбГУТ им. проф. М.А. Бонч-Бруевича — ИСИТ",
         stage: "2019",
       },
       {
-        title: "Курс 'JavaScript/DOM/Интерфейсы' для новичков",
+        title: "Frontend-программист — GeekBrains",
+        stage: "2024",
+      },
+      {
+        title: "JavaScript/DOM/Интерфейсы — javascript.ru",
         stage: "2020",
       },
       {
-        title: "Курс Frontend-программист - GeekBrains",
-        stage: "2024",
+        title: "CCNA Routing and Switching — Cisco",
+        stage: "2018",
       },
     ],
   },
@@ -121,20 +68,31 @@ const aboutData = [
     info: [
       {
         title: "Email",
-        icon: <FaMailBulk />,
         stage: (
-          <a href="mailto:tural.abdullaev@mail.ru">tural.abdullaev@mail.ru</a>
+          <a href="mailto:tural.abdullaev@mail.ru" className="hover:text-accent dark:hover:text-accentDark transition-colors">
+            tural.abdullaev@mail.ru
+          </a>
         ),
       },
       {
         title: "Telegram",
-        icon: <BsTelephoneInbound />,
-        stage: "@TuralAbd",
+        stage: (
+          <a href="https://t.me/TuralAbd" target="_blank" rel="noopener noreferrer" className="hover:text-accent dark:hover:text-accentDark transition-colors">
+            @TuralAbd
+          </a>
+        ),
       },
       {
-        title: "Номер телефона",
-        icon: <BsTelephoneInbound />,
-        stage: <a href="tel:+79095910091">+7 909 591 00 91</a>,
+        title: "Телефон",
+        stage: (
+          <a href="tel:+79095910091" className="hover:text-accent dark:hover:text-accentDark transition-colors">
+            +7 909 591 00 91
+          </a>
+        ),
+      },
+      {
+        title: "Локация",
+        stage: "Санкт-Петербург",
       },
     ],
   },
@@ -143,155 +101,131 @@ const aboutData = [
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className="w-full h-full py-32 text-center xl:text-left">
+    <div className="w-full min-h-dvh flex items-center text-center xl:text-left">
       <Circles />
-      {/* avatar */}
-      <motion.div
-        variants={fadeIn("right", 0.2)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-        className="hidden xl:flex absolute -left-[380px] top-60"
-      >
-        <Avatars />
-      </motion.div>
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
+      <div className="container mx-auto flex flex-col items-start xl:flex-row gap-x-20">
         {/* text */}
-        <div className=" flex-1 flex flex-col justify-center">
+        <div className="flex-1 flex flex-col justify-center">
           <motion.h2
             variants={fadeIn("right", 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="h2 "
+            className="h2"
           >
-            Моя <span className=" text-accent dark:text-accentDark"> мечта - </span>стать отличным{" "}
-            <span className=" text-accent dark:text-accentDark"> разработчиком</span>.
+            Frontend-
+            <span className="text-accent dark:text-accentDark">разработчик</span>{" "}
+            с опытом в IT
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className=" xl:max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-2"
+            className="xl:max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            Постоянно учусь и совершенствую свои навыки в программировании,
-            люблю работать с новыми технологиями и придерживаюсь коллективного
-            подхода в команде. Никогда не останавливаюсь на достигнутом и всегда
-            исследую новые возможности. Верю в себя и свой опыт, и уверен, что
-            мой постоянный рост и усовершенствование сделают меня ценным членом
-            вашей команды.
+            Работаю в RealWeb — разрабатываю и поддерживаю клиентскую часть
+            веб-приложений. Создаю лендинги и промо-сайты. Имею обширный опыт в
+            IT: от администрирования сайтов и сетевого оборудования до
+            коммерческой веб-разработки. Окончил СПбГУТ по направлению
+            «Информационные системы и технологии».
           </motion.p>
-          {/* counters  */}
+
+          {/* Quick stats */}
           <motion.div
             variants={fadeIn("right", 0.6)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8 flex-col  text-center  xl:items-start items-center	"
+            className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8 gap-x-6"
           >
-            <h3 className="text-3xl ">Окончил</h3>
-            <div className="flex flex-1  mt-6 ">
-              {/* experience  */}
-              <div className=" relative flex-1 after:w-[1px] before:w-[1px]  before:bg-white/10 before:absolute before:h-full before:top-0 before:left-0  after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0 ">
-                <div className=" text-2xl xl:text-3xl  mb-2  ">
-                  <p
-                    className="relative
-before:absolute before:inset-0 before:animate-typewriter before:bg-primary dark:before:bg-blackFon after:absolute after:inset-0 after:w-[0.100em] after:animate-caret after:bg-accent dark:after:bg-accentDark dark:text-accentDark text-accent"
-                  >
-                    СПБГУТ
-                  </p>
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[150px]">
-                  СПбГУТ имени профессора М. А. Бонч-Бруевича
-                </div>
+            <div className="text-center">
+              <div className="text-2xl xl:text-3xl font-bold text-accent dark:text-accentDark">
+                2+
               </div>
-              {/* clients */}
-              <div className=" relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className=" text-2xl xl:text-3xl  mb-2 ">
-                  <p
-                    className="relative 
-before:absolute before:inset-0 before:animate-typewriter before:bg-primary 
-after:absolute after:inset-0 after:w-[0.100em] after:animate-caret dark:before:bg-blackFon after:bg-accent  dark:after:bg-accentDark dark:text-accentDark text-accent"
-                  >
-                    ИСИТ
-                  </p>
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[150px]">
-                  Факультет информационные системы и технологии
-                </div>
+              <div className="text-xs text-white/50 uppercase tracking-wider">
+                года веб-разработки
               </div>
-              {/* projects */}
-              <div className=" relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className=" text-2xl xl:text-3xl  mb-2 ">
-                  <p
-                    className="relative 
-before:absolute before:inset-0 before:animate-typewriter before:bg-primary 
-after:absolute after:inset-0 after:w-[0.100em] after:animate-caret dark:before:bg-blackFon after:bg-accent  dark:after:bg-accentDark dark:text-accentDark text-accent"
-                  >
-                    ИУС
-                  </p>
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[150px]">
-                  Кафедра Информационных управляющих систем
-                </div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl xl:text-3xl font-bold text-accent dark:text-accentDark">
+                8+
+              </div>
+              <div className="text-xs text-white/50 uppercase tracking-wider">
+                проектов
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl xl:text-3xl font-bold text-accent dark:text-accentDark">
+                9+
+              </div>
+              <div className="text-xs text-white/50 uppercase tracking-wider">
+                лет в IT
               </div>
             </div>
           </motion.div>
         </div>
-        {/* info */}
+
+        {/* info tabs */}
         <motion.div
           variants={fadeIn("left", 0.4)}
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] h-[480px]"
+          className="flex flex-col w-full xl:max-w-[48%]"
         >
           <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
-            {aboutData.map((item, itemIndex) => {
-              return (
-                <div
-                  key={itemIndex}
-                  className={`${
-                    index === itemIndex &&
-                    "text-accent  dark:after:bg-accentDark dark:text-accentDark after:w-[100%] after:bg-accent after:transition-all after:duration-300"
-                  } "cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
-                  onClick={() => setIndex(itemIndex)}
-                >
+            {aboutData.map((item, itemIndex) => (
+              <div
+                key={itemIndex}
+                className={`${
+                  index === itemIndex
+                    ? "text-accent dark:text-accentDark after:w-[100%] after:bg-accent dark:after:bg-accentDark after:transition-all after:duration-300"
+                    : ""
+                } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
+                onClick={() => setIndex(itemIndex)}
+              >
+                {item.title}
+              </div>
+            ))}
+          </div>
+
+          <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
+            {aboutData[index].info.map((item, itemIndex) => (
+              <div
+                key={itemIndex}
+                className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
+              >
+                {/* title */}
+                <div className="font-light mb-2 md:mb-0 text-white">
                   {item.title}
                 </div>
-              );
-            })}
-          </div>
-          <div className=" py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
-            {aboutData[index].info.map((item, itemIndex) => {
-              return (
-                <div
-                  key={itemIndex}
-                  className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
-                >
-                  <div className=" text-accent dark:text-accentDark">   {item.icon}</div>
-                  {/* title */}
-                  <div className=" font-light mb-2 md:mb-0 text-white">{item.title}</div>
-                  <div className="hidden md:flex ">-</div>
-                  <div>{item.stage}</div>
-                  <div className="flex gap-x-4 ">
-                    {/* icons */}
-                    {item.info?.map((item, itemIndex) => {
-                      return (
-                        <div
-                          key={itemIndex}
-                          className="text-2xl text-white flex flex-col items-center"
-                        >
-                          {item.icon}
-                          <div className="text-xs">{item.name}</div>
-                        </div>
-                      );
-                    })}
+                {item.stage && (
+                  <>
+                    <div className="hidden md:flex">-</div>
+                    <div>{item.stage}</div>
+                  </>
+                )}
+                {/* icons for skills */}
+                {item.icons && (
+                  <div className="flex flex-wrap gap-3 mt-2">
+                    {item.icons.map((skillItem, si) => (
+                      <div
+                        key={si}
+                        className="flex flex-col items-center gap-y-1"
+                      >
+                        <span className="text-2xl text-accent dark:text-accentDark">
+                          {skillItem.icon}
+                        </span>
+                        <span className="text-[10px] text-white/50">
+                          {skillItem.name}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                </div>
-              );
-            })}
+                )}
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>

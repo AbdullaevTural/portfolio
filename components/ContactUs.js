@@ -9,7 +9,7 @@ export const ContactUs = () => {
     const [formSubmitted, setFormSubmitted] = useState({ title: '', paragraph: '' });
     const sendEmail = (e) => {
       e.preventDefault();
-      setFormSubmitted({ title: 'Sending message...', paragraph: '' });
+      setFormSubmitted({ title: 'Отправка письма...', paragraph: '' });
       emailjs
         .sendForm('service_2ral', 'template_su4fjal', form.current, {
           publicKey: 'CxYSqcAM_IC_MBcgr',
@@ -34,7 +34,7 @@ export const ContactUs = () => {
             <input type="email" name="user_email" placeholder="email" className="input"/>
           </div>
           <textarea name="message" placeholder="сообщение" className="textarea"></textarea>
-          <button  className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center  overflow-hidden hover:border-accent dark:hover:border-accentDark group">
+          <button  className="btn self-center rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center  overflow-hidden hover:border-accent dark:hover:border-accentDark group">
             <span className=" group-hover:-translate-y-[120%]  group-hover:opacity-0 transition-all duration-300">Отправить</span>
             <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]"/>
           </button>
