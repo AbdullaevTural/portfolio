@@ -8,10 +8,13 @@ import {
   FaGitAlt,
   FaNodeJs,
   FaFigma,
+  FaWordpress,
+  FaDatabase,
+  FaCode,
 } from "react-icons/fa";
 
 import {
-  SiNextdotjs,
+  SiNuxt,
   SiTailwindcss,
   SiTypescript,
   SiMongodb,
@@ -27,29 +30,40 @@ export const skillCategories = [
       { name: "HTML5", icon: FaHtml5 },
       { name: "CSS3", icon: FaCss3 },
       { name: "JavaScript", icon: FaJs },
+      { name: "TypeScript", icon: SiTypescript },
       { name: "React", icon: FaReact },
       { name: "Vue.js", icon: FaVuejs },
-      { name: "Next.js", icon: SiNextdotjs },
+      { name: "Nuxt.js", icon: SiNuxt },
       { name: "Tailwind CSS", icon: SiTailwindcss },
       { name: "Sass", icon: FaSass },
     ],
   },
+
   {
-    title: "Инструменты",
+    title: "CMS",
     skills: [
-      { name: "Git", icon: FaGitAlt },
-      { name: "npm", icon: FaNodeJs },
-      { name: "Figma", icon: FaFigma },
-      { name: "Vercel", icon: SiVercel },
-      { name: "Webpack", icon: SiWebpack },
+      { name: "Bitrix", icon: FaCode },
+      { name: "WordPress", icon: FaWordpress },
     ],
   },
+
   {
     title: "Backend / БД",
     skills: [
       { name: "Node.js", icon: FaNodeJs },
       { name: "MongoDB", icon: SiMongodb },
       { name: "MySQL", icon: SiMysql },
+      { name: "REST API", icon: FaCode },
+    ],
+  },
+
+  {
+    title: "Инструменты",
+    skills: [
+      { name: "Git", icon: FaGitAlt },
+      { name: "Figma", icon: FaFigma },
+      { name: "Webpack", icon: SiWebpack },
+      { name: "Vercel", icon: SiVercel },
     ],
   },
 ];

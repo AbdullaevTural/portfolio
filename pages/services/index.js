@@ -28,9 +28,9 @@ const TechStack = () => {
               exit="hidden"
               className="mb-4 max-w-[400px] mx-auto xl:mx-0"
             >
-              Основной стек — React, Vue.js и Next.js. Пишу адаптивные
+              Основной стек —  Vue.js и Nuxt.js. Пишу адаптивные
               интерфейсы с Tailwind CSS и Sass. Работаю с Git, REST API,
-              инструментами сборки.
+              инструментами сборки. Работаю с Node.js, PHP и Bitrix. Имею опыт работы с React, Next.js и другими технологиями.
             </motion.p>
           </div>
 
