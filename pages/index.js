@@ -14,9 +14,9 @@ import {motion} from "framer-motion";
 import {fadeIn} from "../variants";
 
 const Home = () => {
-  return (<div className="h-dvh">
+  return (<div className="xl: h-dvh">
   {/* text */}
-  <div className="w-full h-full ">
+  <div className="w-full xl:h-full ">
     <div className="text-center flex flex-col justify-center items-center xl:items-start xl:text-left h-full container mx-auto px-4">
         {/* title */}
         <motion.h1 variants={fadeIn('down', 0.2)} initial="hidden" animate="show" exit='hidden' className="h1 xl:w-2/4 z-9 [text-shadow:_0_5px_0_rgb(0_0_0_/_40%)] text-3xl sm:text-4xl">
