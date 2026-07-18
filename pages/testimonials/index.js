@@ -7,7 +7,7 @@ import { fadeIn } from '../../variants';
 
 const Testimonials = () => {
   return (
-    <div className='h-full py-32 text-center'>
+    <div className='relative min-h-full h-full py-32 text-center'>
       <div className='container mx-auto h-full flex flex-col justify-center'>
         {/* title */}
         <motion.h2

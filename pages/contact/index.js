@@ -12,7 +12,7 @@ import { fadeIn } from "../../variants";
 import ContactUs from "../../components/ContactUs";
 
 const Contact = () => {
-  return <div className="w-full xl:min-h-dvh flex items-center text-center xl:text-left">
+  return <div className="relative min-h-full w-full flex items-center text-center xl:text-left">
     <div className="container mx-auto py-10 text-center xl:text-left flex items-center justify-center h-full">
       <div className="flex flex-col w-full max-w-[700px]">
         <motion.h2 variants={fadeIn('up', 0.2)} initial='hidden' animate='show' exit='hidden' className="h2 text-center mb-12">

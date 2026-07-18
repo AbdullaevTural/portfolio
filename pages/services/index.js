@@ -5,10 +5,10 @@ import { skillCategories } from "../../data/skills";
 
 const TechStack = () => {
   return (
-    <div className="w-full min-h-dvh flex items-center text-center xl:text-left">
+    <div className="min-h-full w-full flex items-center text-center xl:text-left p-[70px]">
       <Circles />
-      <div className="container mx-auto flex flex-col items-center xl:flex-row gap-x-20">
-        <div className="w-full min-h-dvh flex items-center text-center xl:text-left flex-col xl:flex-row gap-x-20">
+      <div className="container mx-auto flex flex-col items-center xl:flex-row gap-x-20 ">
+        <div className="w-full flex items-center text-center xl:text-left flex-col xl:flex-row gap-x-20">
           {/* Text */}
           <div className="text-center flex xl:w-[30vw] flex-col items-center xl:items-start xl:text-left mb-8 xl:mb-0">
             <motion.h2

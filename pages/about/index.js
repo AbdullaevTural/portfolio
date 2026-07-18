@@ -186,9 +186,9 @@ const aboutData = [
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className="w-full min-h-dvh flex items-center text-center xl:text-left">
+    <div className="min-h-full w-full flex items-center text-center xl:text-left">
       <Circles />
-      <div className="container mx-auto flex flex-col items-start xl:flex-row gap-x-20">
+      <div className="container mx-auto flex flex-col items-start xl:flex-row gap-x-20 py-12">
         {/* text */}
         <div className="flex-1 flex flex-col justify-center">
           <motion.h2

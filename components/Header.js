@@ -11,9 +11,9 @@ import { HiOutlineDocumentArrowDown } from "react-icons/hi2";
 
 const Header = ({ isScrollable }) => {
   return (
-    <header className={`${isScrollable ? 'relative' : 'absolute'} z-30 w-full flex items-center xl:px-0 xl:h-[96px]`}>
-      <div className="w-full mx-auto px-16">
-        <div className="flex flex-col lg:flex-row justify-end items-center gap-y-6 py-8">
+    <header className="relative z-30 flex items-center md:absolute md:left-0 md:top-0 md:w-full xl:px-0">
+      <div className="mx-auto h-full px-16">
+        <div className="flex h-full flex-col items-center justify-end gap-y-6 py-4 lg:flex-row">
           {/* Socials + Resume */}
           <div className="flex items-center gap-x-6">
             <Socials />

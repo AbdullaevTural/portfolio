@@ -67,6 +67,87 @@ export const experience = [
   },
 ];
 
+export const supportCompanies = [
+  {
+    name: "AFIN",
+    url: "https://afin.online/",
+    domain: "afin.online",
+    description: "Корпоративный сайт и презентация услуг.",
+  },
+  {
+    name: "Marc O'Polo",
+    url: "https://marc-o-polo.ru",
+    domain: "marc-o-polo.ru",
+    description: "Интернет-магазин одежды и аксессуаров.",
+  },
+  {
+    name: "Relix Seeds",
+    url: "https://relixseeds.ru/",
+    domain: "relixseeds.ru",
+    description: "Каталог семян и товаров для сада.",
+  },
+  {
+    name: "Bionorica",
+    url: "https://www.bionorica.ru/",
+    domain: "bionorica.ru",
+    description: "Информационный сайт фармацевтической компании. Также поддержка продуктовых сайтов",
+  },
+  {
+    name: "Syngenta",
+    url: "https://www.syngenta.ru/",
+    domain: "syngenta.ru",
+    description: "Аграрный сайт с каталогом решений и продуктов.",
+  },
+  {
+    name: "BMW Боришоф",
+    url: "https://www.bmw-borishof.ru/",
+    domain: "bmw-borishof.ru",
+    description: "Сайт официального дилера BMW.",
+  },
+  {
+    name: "Фитомуцил",
+    url: "http://fitomucil.ru/",
+    domain: "fitomucil.ru",
+    description: "Сайт бренда и информация о продукции.",
+  },
+  {
+    name: "СИБУР",
+    url: "https://shop.sibur.ru/",
+    domain: "shop.sibur.ru",
+    description: "Интернет-магазин продукции СИБУР.",
+  },
+  {
+    name: "Мосэнергосбыт",
+    url: "https://www.mosenergosbyt.ru/",
+    domain: "mosenergosbyt.ru",
+    description: "Сайт энергосбытовой компании и сервисы для клиентов.",
+  },
+  {
+    name: "Cold & Flu",
+    url: "https://cold-flu.ru/",
+    domain: "cold-flu.ru",
+    description: "Информационный сайт о средствах от простуды.",
+  },
+  {
+    name: "CARBO СИБУР",
+    url: "https://carbo.sibur.ru/",
+    domain: "carbo.sibur.ru",
+    description: "Промо-сайт продукта CARBO.",
+  },
+  {
+    name: "Smart Build Service",
+    url: "https://smartbuildservice.ru/",
+    domain: "smartbuildservice.ru",
+    description: "Корпоративный сайт строительного сервиса.",
+  },
+  {
+    name: "PolyLab СИБУР",
+    url: "https://polylab.sibur.ru/",
+    domain: "polylab.sibur.ru",
+    description: "Сайт лабораторного проекта СИБУР.",
+  },
+];
+
 export const education = [
   {
     year: "2019",

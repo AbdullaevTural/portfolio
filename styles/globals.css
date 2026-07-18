@@ -38,6 +38,7 @@
 
 .experience-swiper .swiper-wrapper {
   align-items: stretch;
+  margin-bottom: 20px;
 }
 
 .experience-swiper .swiper-slide {
@@ -175,7 +176,7 @@
   }
 
   .page {
-    @apply w-full h-screen overflow-hidden;
+    @apply w-full h-screen overflow-x-hidden overflow-y-auto;
   }
   .page-scroll {
     @apply w-full overflow-y-auto overflow-x-hidden;

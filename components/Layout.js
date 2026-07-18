@@ -34,13 +34,11 @@ const Layout = ({ children }) => {
         ${kurale.variable}
         font-kurale
         text-white
-        relative
+        
         min-h-screen
 
-        overflow-x-auto
+        overflow-x-hidden
         overflow-y-auto
-
-        lg:overflow-hidden
       `}
     >
       <CustomCursor />

@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
+import { BsArrowUpRight } from "react-icons/bs";
 import { fadeIn } from "../../variants";
 import Circles from "../../components/Circles";
-import { experience, education, certificates } from "../../data/experience";
+import { experience, supportCompanies } from "../../data/experience";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css/bundle";
@@ -11,9 +12,9 @@ import "swiper/css/navigation";
 
 const Experience = () => {
   return (
-    <div className="w-full min-h-dvh flex items-center text-center xl:text-left">
+    <div className="relative min-h-full w-full flex items-center text-center xl:text-left">
       <Circles />
-      <div className="container mx-auto items-start xl:flex-row gap-x-20">
+      <div className="container mx-auto items-start xl:flex-row gap-x-20 mb-10">
         <motion.h2
           variants={fadeIn("down", 0.2)}
           initial="hidden"
@@ -132,6 +133,49 @@ const Experience = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+
+          <div className="mt-10 px-4 pb-8">
+            <h3 className="text-xl font-semibold text-white mb-2">
+              Сайты на технической поддержке
+              <span className="text-accent dark:text-accentDark">.</span>
+            </h3>
+            <p className="text-sm text-white/50 mb-5">
+              Компании и проекты, для которых я выполнял техническую поддержку
+              сайтов.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+              {supportCompanies.map((company) => (
+                <a
+                  key={company.url}
+                  href={company.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative rounded-lg bg-white/5 border border-white/10 p-4 hover:border-accent/50 dark:hover:border-accentDark/50 transition-all duration-300"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/20 dark:bg-accentDark/20 text-lg font-semibold text-accent dark:text-accentDark">
+                        {company.name.charAt(0)}
+                      </span>
+                      <div className="min-w-0">
+                        <h4 className="truncate text-sm font-semibold text-white">
+                          {company.name}
+                        </h4>
+                        <p className="truncate text-xs text-white/45">
+                          {company.domain}
+                        </p>
+                      </div>
+                    </div>
+                    <BsArrowUpRight className="mt-1 shrink-0 text-white/40 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent dark:group-hover:text-accentDark" />
+                  </div>
+                  <p className="mt-4 text-xs text-white/55">
+                    {company.description}
+                  </p>
+                </a>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>

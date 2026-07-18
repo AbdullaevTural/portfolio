@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }) {
       <AnimatePresence mode="wait">
         <motion.div
           key={router.route}
-          className="xl:min-h-dvh relative pt-[96px] pb-[90px] xl:pt-0 xl:pb-0"
+          className="xl:mb-0 md:mt-[70px] md:mb-[56px] min-h-[calc(100%-126px)] xl:min-h-[calc(100%-70px)] content-center"
           onAnimationStart={() => {
             window.scrollTo(0, 0);
             const pageEl = document.querySelector('.page');
