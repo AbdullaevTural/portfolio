@@ -170,6 +170,77 @@
   }
 }
 
+/* ──────────────────────────────────────────────────────
+   Custom Scrollbar — matches site accent colors & glow
+   ────────────────────────────────────────────────────── */
+
+/* Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(49, 72, 51, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f3a615 0%, #ae7812 100%);
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(243, 166, 21, 0.4);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffc140 0%, #f3a615 100%);
+  box-shadow: 0 0 12px rgba(243, 166, 21, 0.7);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #f3a615;
+  box-shadow: 0 0 16px rgba(243, 166, 21, 0.9);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track,
+html.dark ::-webkit-scrollbar-track {
+  background: rgba(26, 20, 53, 0.5);
+}
+
+.dark ::-webkit-scrollbar-thumb,
+html.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f13024 0%, #a01c14 100%);
+  box-shadow: 0 0 6px rgba(241, 48, 36, 0.4);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover,
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff5449 0%, #f13024 100%);
+  box-shadow: 0 0 12px rgba(241, 48, 36, 0.7);
+}
+
+.dark ::-webkit-scrollbar-thumb:active,
+html.dark ::-webkit-scrollbar-thumb:active {
+  background: #f13024;
+  box-shadow: 0 0 16px rgba(241, 48, 36, 0.9);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #f3a615 rgba(49, 72, 51, 0.3);
+}
+
+.dark *,
+html.dark * {
+  scrollbar-color: #f13024 rgba(26, 20, 53, 0.5);
+}
+
 @layer base {
   body {
     @apply dark:bg-site bg-cover bg-no-repeat bg-primary overflow-x-hidden leading-relaxed;

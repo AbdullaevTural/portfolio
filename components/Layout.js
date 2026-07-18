@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
 
       <Header />
 
-      <div
+      <aside
         className="
           flex 
           flex-row 
@@ -70,7 +70,7 @@ const Layout = ({ children }) => {
       >
         <Nav />
         <DarkMode />
-      </div>
+      </aside>
 
       {children}
     </div>
