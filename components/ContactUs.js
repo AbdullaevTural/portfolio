@@ -7,11 +7,14 @@ import Link from "next/link";
 // icons 
 import { BsArrowRight } from "react-icons/bs";
 
+const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
 export const ContactUs = () => {
     const form = useRef();
     const [formSubmitted, setFormSubmitted] = useState({ title: '', paragraph: '' });
     const [consentGiven, setConsentGiven] = useState(false);
     const [consentError, setConsentError] = useState(false);
+    const [fieldErrors, setFieldErrors] = useState({ name: '', email: '', message: '' });
 
     const handleConsentChange = (e) => {
       setConsentGiven(e.target.checked);
@@ -20,8 +23,40 @@ export const ContactUs = () => {
       }
     };
 
+    const clearFieldError = (fieldName) => {
+      setFieldErrors((prev) => (prev[fieldName] ? { ...prev, [fieldName]: '' } : prev));
+    };
+
     const sendEmail = (e) => {
       e.preventDefault();
+
+      const nameValue = form.current.user_name.value.trim();
+      const emailValue = form.current.user_email.value.trim();
+      const messageValue = form.current.message.value.trim();
+
+      const newFieldErrors = { name: '', email: '', message: '' };
+
+      if (!nameValue) {
+        newFieldErrors.name = 'Введите имя';
+      }
+
+      if (!emailValue) {
+        newFieldErrors.email = 'Введите email';
+      } else if (!isValidEmail(emailValue)) {
+        newFieldErrors.email = 'Введите корректный email';
+      }
+
+      if (!messageValue) {
+        newFieldErrors.message = 'Введите сообщение';
+      }
+
+      setFieldErrors(newFieldErrors);
+
+      const hasFieldError = Boolean(newFieldErrors.name || newFieldErrors.email || newFieldErrors.message);
+
+      if (hasFieldError) {
+        return;
+      }
 
       if (!consentGiven) {
         setConsentError(true);
@@ -48,11 +83,46 @@ export const ContactUs = () => {
 
   return formSubmitted.title === '' ? (
         <form ref={form}  onSubmit={sendEmail} className="flex-1 flex flex-col gap-6 w-full mx-auto">
-        <div className="flex gap-x-6 w-full">
-            <input type="text" name="user_name"  placeholder="имя" className="input"/>
-            <input type="email" name="user_email" placeholder="email" className="input"/>
+        <div className="flex flex-col sm:flex-row gap-x-6 gap-y-2 w-full">
+            <div className="flex-1 flex flex-col gap-1">
+              <input
+                type="text"
+                name="user_name"
+                placeholder="имя"
+                className="input"
+                aria-invalid={Boolean(fieldErrors.name)}
+                onChange={() => clearFieldError('name')}
+              />
+              {fieldErrors.name && (
+                <p className="text-accentDark text-sm">{fieldErrors.name}</p>
+              )}
+            </div>
+            <div className="flex-1 flex flex-col gap-1">
+              <input
+                type="email"
+                name="user_email"
+                placeholder="email"
+                className="input"
+                aria-invalid={Boolean(fieldErrors.email)}
+                onChange={() => clearFieldError('email')}
+              />
+              {fieldErrors.email && (
+                <p className="text-accentDark text-sm">{fieldErrors.email}</p>
+              )}
+            </div>
           </div>
-          <textarea name="message" placeholder="сообщение" className="textarea"></textarea>
+          <div className="flex flex-col gap-1 w-full">
+            <textarea
+              name="message"
+              placeholder="сообщение"
+              className="textarea"
+              aria-invalid={Boolean(fieldErrors.message)}
+              onChange={() => clearFieldError('message')}
+            ></textarea>
+            {fieldErrors.message && (
+              <p className="text-accentDark text-sm">{fieldErrors.message}</p>
+            )}
+          </div>
           <div className="flex flex-col gap-2 w-full">
             <div className="flex items-start gap-x-3">
               <input
