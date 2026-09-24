@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import Layout from "../components/Layout";
 import Transition from "../components/Transition";
+import Script from "next/script";
 //router 
 import { useRouter } from "next/router";
 import { useEffect } from "react";
@@ -29,6 +30,27 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Layout>
+      <Script id="yandex-metrika" strategy="afterInteractive">
+        {`(function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {
+            if (document.scripts[j].src === r) { return; }
+          }
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113019185', 'ym');
+
+        ym(113019185, 'init', {
+          ssr: true,
+          webvisor: true,
+          clickmap: true,
+          ecommerce: 'dataLayer',
+          referrer: document.referrer,
+          url: location.href,
+          accurateTrackBounce: true,
+          trackLinks: true
+        });`}
+      </Script>
       <AnimatePresence mode="wait">
         <motion.div
           key={router.route}
